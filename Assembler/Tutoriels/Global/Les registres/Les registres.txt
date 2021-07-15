@@ -1,0 +1,41 @@
+Les registres sont des variables stoquées dans le processeur, elles sont d'un nombre limité et c'est les seules variables avec lesquelles on va pouvoir faire des opérations
+
+[Les registres]
+	{Registres}
+		(voir ./Registres.PNG)
+
+		Il y'a plusieurs registres dans le processeur dont les plus utilisés :
+			AX (16 bits) EAX (32 bits) RAX (64 bits)
+			BX (16 bits) EBX (32 bits) RBX (64 bits)
+			CX (16 bits) ECX (32 bits) RCX (64 bits)
+			DX (16 bits) EDX (32 bits) RDX (64 bits)
+			...
+
+	{Manipulation registres} :
+		- Mettre le contenu d'un registre à <src> (registre ou valeur> :
+			mov <registre>, <src: registre/valeur>
+			
+			; exemple 1 : mov eax, ebx
+			; exemple 2 : mov ecx, 5
+
+		- Mettre le un registre à la valeur d'un label (variable en mémoire) :
+			mov <registre>, [<label>]
+
+		- Mettre le contenu d'un label à un registre :
+			mov [<label>], <registre> 
+			; Attention, un registre est requis, pas une valeur, sinon on pourrait avoir une erreur du type :
+			;  error: operation size not specified
+
+	{Les pointeurs} :
+		Il y'a aussi des registres qui sont des pointeurs, ils pointent vers une adresse en mémoire :
+			- RIP (64 bits) EIP (32 bits) IP (16 bits) 
+				= Instruction/Index pointer : Pointe vers l'adresse de la prochaine instruction à exécuter
+			- RSP (64 bits) ESP (32 bits) SP (16 bits) 
+				= Stack pointer : Pointe vers l'adresse la plus haute de la pile
+			- RBP (64 bits) EBP (32 bits) BP (16 bits) 
+				= Stack base pointer : Pointe vers l'addresse la plus basse de la pile
+
+	{Le flux d'exécution} :
+		RIP (ou EIP ou IP) pointe vers la prochaine adresse à être exécutée dans le contrôle du flux d'exécution
+		Par défaut, le code va du haut des instructions au bas des instructions, cette direction (ici de haut en bas) est appelée le contrôle du flux d'exécution
+		Ce registre (pointeur) prend l'adresse de la prochaine instruction a être exécutée dans le code, à chaque instruction, il est incrémenté de 1, donc c'est pour cela que le contrôle du flux d'exécution va de haut en bas

@@ -1,0 +1,84 @@
+Pour utiliser un fichier, il faut son file descriptor qui sert simplement à représenter les informations du fichier pour savoir de quel fichier on parle
+Pour obtenir le file descriptor, on peut ouvrir le fichier avec le syscall : sys_open
+sys_open (syscall 2) est :
+	- rax -> 2
+	- rdi -> adresse mémoire du nom du fichier à ouvrir
+	- rsi -> Les flags (voir ./flags.asm)
+	- rdx (quand on veut créer le fichier) -> Permission en octal du fichier (voir le cours Linux)
+
+[Gestion des fichiers - NASM (linux)]
+	{Prérequis} :
+		- Inclure le fichier ./flags.asm qui contient les constantes des flags avec leur ID :
+			%include "flags.asm"
+	{Ouverture} :
+		(dans .data)
+				<variable nom fichier> db "<nom fichier>", 0x00
+				
+		- Ouvrir un fichier en mode écriture :
+			(dans .text)
+				mov rax, 2 ; sys_open
+				
+				mov rdi, <variable nom fichier>  
+				; Le nom du fichier où écrire qui doit être null terminated (Il doit y'avoir un null byte à la fin de celui-ci )
+				
+				mov rsi, <flags*> 
+
+				mov rdx, <permission*>o ; La permission en octal du fichier à créer (ne pas oublier le 'o' à la fin)
+				
+				syscall ; Appeler le kernel
+				
+				push rax ; On sauvegarde le File descriptor contenu dans rax sur le haut de la pile
+
+		/*
+				<permission> : (voir cours linux)
+					Exemple : 0777
+					
+				<flags> : Les paramètres d'ouverture du fichier :
+					- En mode écriture :
+						- Ecrire dans le fichier : O_CREAT+O_WRONLY
+						- Ajout en fin de fichier : O_APPEND+O_WRONLY
+		*/
+		
+		- Ouvrir un fichier en mode lecture :
+			mov rax, 2 ; sys_open
+			mov rdi, <variable nom fichier> 
+			; Le nom du fichier où lire qui doit être null terminated (Il doit y'avoir un null byte à la fin de celui-ci )
+			mov rsi, O_RDONLY ; On veut lire le fichier
+			; Les permission n'ont aucune utilité si on veut lire le fichier
+			syscall
+		
+	{Ecriture} :
+		(il faut d'abord ouvrir le fichier en mode écriture)
+		- Ecrire dans le fichier :
+			(dans .data) :
+				<nom variable contenu fichier> db "<contenu fichier>"
+				
+			(dans .text) :
+				mov rdi, rax ; Le file descriptor retourné avec sys_open 
+				mov rax, 1 ; sys_write
+				mov rsi, <nom variable contenu fichier>
+				; Que mettre dans ce fichier
+				mov rdx, <longueur de la chaîne à écrire dans le fichier> 
+				; La longueur de la chaîne à mettre dans le fichier
+				syscall
+	(exemple dans ./exemples/write-file.asm)
+	
+	{Lecture} :
+		(il faut d'abord ouvrir le fichier en mode lecture)
+			- Lire le fichier ouvert :
+				(dans .bss) :
+					<var buffer contenu fichier> resb <longueur max>
+					
+				(dans .text)
+					; Lire le fichier :
+					mov rdi, rax ; Le file descriptor retourné avec sys_open 
+					mov rax, 0 ; sys_read
+					mov rsi, <var buffer contenu fichier> ; Sortie : Où mettre le résultat
+					mov rdx, <nombre de bytes à lire> ; Combien de bytes à lire du fichier
+					syscall
+				
+	{Fermeture} :
+		Une fois qu'on a plus besoin du fichier, il faut le fermer :
+			mov rax, 3 ; sys_close
+			pop rdi ; On récupère le File Descriptor qui était sur le haut de pile
+			syscall

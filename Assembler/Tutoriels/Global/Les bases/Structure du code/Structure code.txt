@@ -1,0 +1,39 @@
+[Structure code] --Open_with_notepad_++--
+Le langage d'assembleur a une structure de code très particulière :
+
+- En tout premier dans le code, on indique l'architecture qu'on veut utiliser (32 ou 64 bits) :
+	bits <architecture 64 ou 32> ; pas obligatoire
+	
+- Les directives :
+	<directive> <argument>
+	-------- Les directives : --------
+		extern <argument:symbole> ; Directive d'inclusion de <symbole>
+		global <argument:symbole/étiquette> ; Directive d'exportation de <étiquette> pour la rendre globale
+		---- Les directives non obligatoires : ----
+		cpu <numéro processeur> ; N'utiliser que les instructions du processeur <numéro processeur>
+	-------- Les sections/segments : --------
+		Les sections/segments comme leur nom l'indique servent à sectionner/diviser le code en plusieurs parties pour des usages différents. Utilisation :
+			section .<section> ; (Les noms des sections font partie du langage)
+		- Sections :
+			- .data : Variables définies avant la compilation
+			- .bss : Variables non définies, crées pour des usages futurs dans le code
+			- .text : Code exécutable
+	
+- Il y'a différentes étiquettes où il y'a les instructions :
+	<étiquette>: 
+		<instruction> <opérande(s)>
+	-------- --------
+		Il peut bien-sûr y'avoir plusieurs instructions :
+		<étiquette>: 
+			<instruction> <opérande(s)>
+			<instruction> <opérande(s)>
+			<instruction> <opérande(s)>
+			...
+	-------- détail : --------
+		Les ":" après le nom de l'étiquette ne sont d'ailleurs pas obligatoires :
+		<étiquette> 
+			<instruction> <opérande(s)>
+			...
+	-------- exemple : --------
+		message ; Etiquette
+			db "Ceci est un message", <nombre> ; Instruction + Opérande

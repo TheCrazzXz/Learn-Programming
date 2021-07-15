@@ -1,0 +1,10 @@
+Les labels sont des adresses dans le code qui contienent du code, ce sont des fonctions
+
+[Les labels - NASM]
+	{Les labels} :
+		- Créer un label :
+			(dans .text)
+				(en dehors du point d'entrée (_start)) :
+					<label>:
+						(code...)
+					

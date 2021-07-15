@@ -1,0 +1,23 @@
+Les sauts servent à changer le contrôle du flux d'exécution du programme, donc de sauter à des adresses
+
+[Les sauts - NASM]
+	{Les sauts} :
+		- Sauter à une adresse
+			jmp <adresse>
+			; Bien sûr un label représente une adresse donc on peut très bien faire :
+			;  jmp <label>
+
+			; jmp va mettre RIP (ou EIP ou IP) à l'addresse <adresse>
+
+		Exemple dans ./exemple.asm
+
+	{Les appels} :
+		Les appels sont des sauts mais si dans la fonction à appeler possède une instruction ret à la fin alors, à la fin de celle-ci, le contrôle du flux d'exécution sera mis à l'adresse où la fonction a été appelée une instruction après, donc pour résumer elle va revenir à la fonction qui l'a appelée à la fin
+
+		- Faire un appel à une adresse :
+			call <adresse> ; Ou <label>
+
+		- Pour le retour :
+			<label>:
+				(code...)
+				ret

@@ -1,0 +1,32 @@
+Les variables sont des labels (un label est juste une adresse dans la mémoire)
+
+[Variables]
+	- Créer une variable dans .data :
+		(dans .data) :
+			<nom nouvelle variable (label)> db <contenu*>
+
+			/*
+				Contenu : 
+					- Chaîne de caractères : "<chaîne de caractères>"
+					- Nombre : <nombre>
+
+				Exemple :
+					text db "Bonjour !!!!"
+					text db "Hello world !", 0x0A ; 0x0A représente la fin de ligne
+					number db 152
+					number db 0xFE ; En héxadécimal
+
+				Notes :
+					Une chaîne de caractères est un tableau de valeurs donc :
+						text db "HELLO WORLD", 0x0A
+						; Est la même chose que :
+						text db 'H', 'E', 'L', 'L', 'O', ' ', 'W', 'O', 'R', 'L', 'D', 0x0A
+			*/
+
+	- Réserver x bytes pour une variable dans la pile dans la section .bss (variable non initialisée) :
+		(dans .bss) :
+			<nom nouvelle variable (label)> resb <nombre de bytes à réserver>
+
+	- Notations labels (variables) :
+		- Spécifier l'adresse de la variable (label) : <variable>
+		- Spécifier la valeur à l'adresse de la variable (contenu label) : [<variable>]

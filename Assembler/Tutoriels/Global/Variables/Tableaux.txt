@@ -1,0 +1,27 @@
+Les tableaux sont des labels (pointeurs vers une adresse en mémoire) qui peuvent contenir plusieurs éléments
+[TABLEAUX - NASM]
+	{Création} :
+		(dans .data) :
+			<nom nouveau tableau (label)> db <valeur 1>, <valeur 2>, <valeur 3> ...
+		
+	{Manipulation tableaux} :
+		- Mettre un registre à l'élément X du tableau :
+			mov <registre>, [<label tableau>+<indice*>]
+
+			
+		- Mettre un élément du tableau à un registre :
+			mov [<label tableau>+<indice*>], <registre> 
+			; Attention, un registre est requis, pas une valeur, sinon on pourrait avoir une erreur du type :
+			;  error: operation size not specified
+
+		/*
+			<indice> : de 0 à la place du dernier élément du tableau crée 
+
+			Exemple :
+				<tableau> db 2, 6, 8, 5
+
+				[<label tableau>+0] = 2
+				[<label tableau>+1] = 6
+				[<label tableau>+2] = 8
+				[<label tableau>+3] = 5
+		*/

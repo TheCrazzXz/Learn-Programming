@@ -1,0 +1,3 @@
+[Constantes] 
+	- Créer une constante qui contient la taille d'une chaîne de caractères
+		<nom constante> equ $-<chaîne>

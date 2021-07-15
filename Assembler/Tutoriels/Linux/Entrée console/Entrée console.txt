@@ -1,0 +1,16 @@
+[Entrée console - NASM (linux)]
+	{Entrée console} :
+		Pour l'entrée console, on va utiliser sys_read pour lire x bytes de stdin
+		Il faut d'abord déclarée la variable buffer (où va être stocké l'entrée) dans la section .bss
+		- Lire stdin (entrée console) :
+			(section .bss) :
+				<(nouvelle) variable buffer> resb <nombre de bytes à reserver>
+				; Réserver <nombre de bytes à reserver> pour <(nouvelle) variable buffer>
+			(section .text) :
+				mov rax, 0 ; sys_read
+   				mov rdi, 0 ; stdin
+    				mov rsi, <variable sortie (buffer)> ; Déclarée dans .bss 
+    				mov rdx, <nombre de bytes à lire> ; Combien de caractères à lire
+    				syscall
+
+		(exemple dans ./exemple.asm)

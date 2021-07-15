@@ -1,0 +1,3 @@
+Un commentaire est un texte qui ne sera pas pris en compte par le code
+- Creer un commentaire :
+; <texte>

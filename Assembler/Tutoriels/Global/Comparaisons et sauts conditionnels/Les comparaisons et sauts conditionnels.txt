@@ -1,0 +1,35 @@
+[Les comparaisons et sauts conditionnels]
+	{Les comparaisons} :
+		- Comparer une registre à une valeur :
+			cmp <registre>, <valeur>
+			; On peut aussi comparer un registre à un autre registre cmp <registre 1>, <registre 2>
+
+	{Les sauts conditionnels} :
+		Après une comparaison avec cmp, on peut sauter à une adresse si une condition est correcte :
+			- Sauter à <adresse> Si a == b (la condition est correcte) : je <adresse> 
+			- Sauter à <adresse> Si a != b (la condition n'est pas correcte) : jne <adresse> 
+
+			- Sauter à <adresse> Si a > b (supérieur) : jg <adresse> OU ja <adresse>
+			- Sauter à <adresse> Si a >= b (supérieur ou égal) : jge <adresse> OU jae <adresse>
+
+			- Sauter à <adresse> Si a < b (inférieur) : jl <adresse> OU jb <adresse>
+			- Sauter à <adresse> Si a <= b (inférieur ou égal) : jle <adresse> OU jbe <adresse>
+
+			- Sauter à <adresse> Si a == 0 (égal à 0) : jz
+			- Sauter à <adresse> Si a != b (pas égal à 0) : jnz
+		
+			; <adresse> ou <label>
+
+		---------------------------------------
+		Exemple 1 :
+			cmp eax, ebx
+			je <label 1> ; Si eax = ebx
+			jne <label 2> ; Si eax != ebx
+
+		Exemple 2 :
+			cmp ebx, 22
+			jg <label 1> ; Si ebx < 22
+			jl <label 2> ; Si ebx > 22
+
+		Exemple 3 (linux) : exemple.asm
+		---------------------------------------

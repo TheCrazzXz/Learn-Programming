@@ -1,0 +1,41 @@
+La pile est un segment de la mémoire qui a la forme d'une pile donc on peut ajouter des éléments pour l'étendre et en retirer pour la circonscrire
+[Manipulation de la pile - NASM]
+	{Manipulation de la pile}
+		- Etendre (ajouter un élément) la pile avec la valeur d'un registre :
+			push <registre> ; <registre> sera donc copié à un nouvel élément au haut de la pile
+
+		- Mettre un registre à l'élément le plus haut de la pile et circoncire celle-ci (contraire de étendre, donc retirer un élément) :
+			pop <registre>
+			; Avec pop on va mettre la valeur de l'élément dans la pile dans <registre> puis on va retirer l'élément de la pile
+
+	{Manipulation de la pile - Adresses précises}
+		RSP (ou ESP ou SP) pointe/contient l'adresse de l'élément le plus haut de la pile
+		- Spécifier la valeur de l'élément le plus haut de la pile :
+			[rsp] ; (rsp ou esp ou sp)
+			; pour spécifier son adresse : rsp
+
+		- Spécifier l'élément X plus bas que l'élément le plus haut de la pile :
+			[rsp+<décalage*>]
+
+			/*
+				<décalage> : Spécifier l'élément plus bas numéro 1 : [rsp+0]
+					     Spécifier l'élément plus bas numéro 2 : [rsp+1*<espace en bytes>]
+					     Spécifier l'élément plus bas numéro 3 : [rsp+2*<espace en bytes>]
+					     ...
+
+				<espace en bytes> : Varie selon l'architecture du programme :
+					- Si le programme est en 64 bits : 8 (car 8*8 = 64)
+					- Si le programme est en 32 bits : 4 (car 8*4 = 32)
+					- Si le programme est en 16 bits : 2 (car 8*2 = 16)
+					- Si le programme est en 8 bits : 1 (car 8*1 = 8)
+
+				Exemple :
+					push 9
+        				push 5
+					push 3
+
+        				mov <registre>, [rsp+0] ; = 3 (et oui c'est pour ça que dans les tableaux en C on spécifie <tableau>[0])
+					mov <registre>, [rsp+1*<espace en bytes>] ; = 5
+					mov <registre>, [rsp+2*<espace en bytes>] ; = 9
+					; rsp ou esp ou sp
+			*/

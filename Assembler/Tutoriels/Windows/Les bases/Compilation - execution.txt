@@ -1,0 +1,10 @@
+[COMPILATION - EXECUTION] (assembleur:nasm) 
+	{Assemblage - Compilation} :
+		- Assembler le programme NASM :
+			(dans le cmd, dans le répértoire du programme) :
+				nasm -f win64 <fichier source (input)>.asm -o <nom fichier assemblé (output).obj
+
+		- Compiler le programme :
+			(Mettre GoLink.exe dans le même répértoire que le fichier source)
+			(dans le cmd, dans le répértoire du programme) :
+				GoLink.exe <nom fichier assemblé (output)>.obj /entry main /console kernel32.dll

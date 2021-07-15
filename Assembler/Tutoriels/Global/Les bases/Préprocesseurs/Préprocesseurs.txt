@@ -1,0 +1,22 @@
+[PREPROCESSEURS]
+	-------------------------------------------
+	Les préprocesseurs sont des programmes 
+	qui se lancent dans la compilation du
+	programme
+
+	Par exemple, %define va définir une constante
+	et lors de la compilation du fichier tous les
+	endroit où cette constante va être écrite, ça
+	va la remplacer par la valeur spécifiée
+
+	exemple : on peut mettre une instruction (ex : call)
+	dans une macro de préprocesseur (ex : "appeler") pour qu'à 
+	chaque fois que ce mot clé ("appeler") soit appelé, lors de 
+	la compilation ça va le remplacer par l'instruction (call)
+	-------------------------------------------
+	{Creation}
+		- Definir une constante en préprocésseur :
+			%define <MACRO> <contenu> ; <contenu> peut être une chaîne de caractères 
+			; Exemples : %define APPELER call
+			;            %define TEXTE_A_DIX_CARACTERES "Et Bonjour"
+			;            %define message_length 10

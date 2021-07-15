@@ -1,0 +1,23 @@
+[Sortie console NASM (linux)]
+	{Sortie console NASM (affichage)}
+		(dans .data)
+			<variable texte à afficher> db "<chaîne>"
+
+		(dans .text)
+			(64 bits) :
+				mov rax, 1 ; sys_write
+				mov rdi, 1 ; stdout
+				mov rsi, <variable texte à afficher>
+				mov rdx, <taille de la variable à afficher>
+				syscall
+
+			(32 bits) :
+				mov eax, 1 ; sys_write
+				mov edi, 1 ; stdout
+				mov esi, <variable texte à afficher>
+				mov edx, <taille de la variable à afficher>
+				int 0x80
+
+	------------------------------------------
+	Exemple (dans ./exemple.asm)
+	------------------------------------------

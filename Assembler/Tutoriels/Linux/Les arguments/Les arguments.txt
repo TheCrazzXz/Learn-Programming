@@ -1,0 +1,48 @@
+Les arguments sont des chaînes de caractères qui peuvent être passés par l'utilisateur en ligne de commande
+Ils sont séparés par des espaces (' ')
+Passer des arguments :
+./<programme> <argument 1> <argument 2> ...
+
+Et dans le programme, ces arguments sont stockés dans la pile
+
+[Les arguments en ligne de commande - NASM (linux)]
+	{Représentation des arguments dans la pile} :
+		---------------------
+		<nombre d'arguments> (int)
+		<chemin du programme> (string)
+		<argument 1> (string)
+		<argument 2> (string)
+		...
+		<argument x> (string)
+		---------------------
+		
+		Si on push une valeur quelconque (exemple ici 9) :
+		---------------------
+		9
+		<nombre d'arguments> (int)
+		<chemin du programme> (string)
+		<argument 1> (string)
+		<argument 2> (string)
+		...
+		<argument x> (string)
+		---------------------
+		
+	Donc pour récupérer ces arguments il faut pop la pile
+	
+	{Gestion des Arguments} :
+		- Mettre le nombre d'arguments à un registre :
+			pop <registre> 
+			
+			
+		- Mettre le le chemin du programme à un registre :
+			pop <registre> ; nombre d'arguments 
+			pop <registre> ; chemin du programme
+			
+		- Mettre un argument à un registre :
+			pop <registre> ; nombre d'arguments 
+			pop <registre> ; chemin du programme
+			
+			pop <registre> ; argument 1
+			; On peut rajouter d'autres `pop <registre>` pour parcourir les arguments
+			
+		[Attention, l'emplacement du pop doit être ajusté par rapport à la pile]

@@ -1,0 +1,14 @@
+[Nasm (Linux)]
+	{Prérequis} :
+		- Il faut avoir l'assembleur nasm :
+			apt install nasm
+
+	{Complilation - liage} :
+		nasm -f <arch*> <fichier source>.asm -o <fichier-assemblé>.o
+		ld <fichier-assemblé>.o -o <fichier exécutable>
+
+		/*
+			<arch*> : 
+				- Elf 64 bits : elf64
+				- Elf 32 bits : elf32
+		*/

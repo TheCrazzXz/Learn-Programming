@@ -1,0 +1,41 @@
+Les appels système sur linux, sont des instructions qui permettent de demander des services au kernel du système
+
+[Les appels système - NASM (Linux)]
+	{Arguments}
+		Les arguments des syscalls sont basés sur le contenu des registres
+		Les arguments des syscalls ont un ordre bien particulier :
+			- L'ID du syscall doit être placée dans : RAX
+			- L'argument 1 du syscall dans : RDI
+			- L'argument 2 du syscall dans : RSI
+			- L'argument 3 du syscall dans : RDX
+			- L'argument 4 dy syscall dans : R10
+			- L'argument 5 dy syscall dans : R8
+			- L'argument 6 dy syscall dans : R9
+
+			Liste des syscalls ainsi que leurs arguments : https://thevivekpandey.github.io/posts/2017-09-25-linux-system-calls.html
+
+	{Exemple} :
+		Le syscall sys_write d'ID 0 sert à écrire dans un fichier (car sur linux tout est fichier)
+		Donc il marche de cette manière :
+			- ID (RAX): 1
+			- Argument 1 (RSI) : <file descriptor> ; Exemple 1 (stdout)
+			- Argument 2 (RDI) : <adresse buffer> ; Une addresse mémoire
+			- Argument 3 (RDX) : <taille du buffer> 
+			  ; Si cet argument 3 est plus petit que la taille réele du buffer, alors, ça n'écrira pas tout le buffer
+			Donc :
+				mov rax, 1
+				mov rsi, <file descriptor>
+				mov rdi, <adresse buffer>
+				mov rdx, <taille du buffer>
+				syscall
+			; En langage C on pourrait faire quelque chose du genre sys_write(<file descriptor>, <buffer>, <taille buffer>)
+
+		Le syscall sys_exit sert à quitter le programme avec un code de sortie
+		Donc il marche de cette manière :
+			- ID (RAX): 60
+			- Argument 1 (RSI) : <code de sortie>
+			Donc :
+				mov rax, 60
+				mov rsi, <code de sortie>
+				syscall
+			; En langage C on pourrait faire quelque chose du genre sys_exit(<code de sortie>)

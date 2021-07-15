@@ -1,0 +1,19 @@
+[Opérations - registres - NASM]
+	{Opération registres} :
+		- Ajouter <src> à un registre :
+			add <registre>, <src: registre/valeur>
+
+		- Soustraire <src> à un registre :
+			sub <registre>, <src: registre/valeur>
+
+		- Multiplier rax (ou eax ou ax) par <src> :
+			mul <registre> ; (rax ou eax ou ax) = (rax ou eax ou ax) * reg
+
+		- Diviser rax (ou eax ou ax) par <src> :
+			div <registre> ; (rax ou eax ou ax) = (rax ou eax ou ax) / reg
+		
+		- Incrémenter (ajouter 1) à un registre :
+			inc <registre>
+
+		- Décrémenter (soustraire 1) à un registre :
+			dec <registre>

@@ -1,0 +1,82 @@
+# - REGISTER	| 64 BIT  32 BIT  16 BIT  8-BIT
+---------------------------------------------
+1 - Accumulator | RAX     EAX     AX      AH/AL
+2 - Counter     | RCX     ECX     CX      CH/CL
+3 - Data        | RDX     EDX     DX      DH/DL
+4 - Base        | RBX     EBX     BX      BH/BL
+
+------------
+<INSTRUCTION> <reg 1>, <reg 2> => <INSTRUCTION CODE> <REG1 REG2*>
+; When you specify 2 registers for operands, in any instruction (mov, xor, and...) the 2 shell code registers <REG1 REG2*> are the same
+;                        1   2
+;   	 ---------------------
+; 		 mov eax, ebx => 89 D8
+;		 xor eax, ebx => 31 D8
+;		 ...
+; 		 1 : Instruction shell code
+;		 2 : <REG1 REG2*>
+
+16 BIT : 66 <Instruction> x
+
+----MOV----
+MOV with operand : <register>, x
+	MOV ...<a>..., <xx> => ...B8... xx
+	MOV ...<b>..., <xx> => ...BB... xx
+	MOV ...<c>..., <xx> => ...B9... xx
+	MOV ...<d>..., <xx> => ...BA... xx
+
+	; 16 BITS
+	MOV ax, x   ;=> ; 66 B8 x
+	MOV bx, x   ;=> ; 66 BB x
+	MOV cx, x   ;=> ; 66 B9 x
+	MOV dx, x   ;=> ; 66 BA x
+	
+	; 32 BITS
+	MOV eax, x  ;=> B8 x 00 00 00
+	MOV ebx, x  ;=> BB x 00 00 00
+	MOV ecx, x  ;=> B9 x 00 00 00
+	MOV edx, x  ;=> BA x 00 00 00
+	
+MOV with operand : <register>, x
+	MOV <reg 1>, <reg 2> ;=> 89 <REG1 REG2*>
+	
+	; 89 D8 89 C8 89 D0
+		mov eax, ebx ;=> 89 D8
+		mov eax, ecx ;=> 89 C8
+		mov eax, edx ;=> 89 DO
+	; 89 C3 89 CB 89 D3
+		mov ebx, eax ;=> 89 C3
+		mov ebx, ecx ;=> 89 CB
+		mov ebx, edx ;=> 89 D3
+	; 89 C1 89 D9 89 D1
+		mov ecx, eax ;=> 89 C1
+		mov ecx, ebx ;=> 89 D9
+		mov ecx, edx ;=> 89 D1
+	; 89 C2 89 DA 89 CA
+		mov edx, eax ;=> 89 C2
+		mov edx, ebx ;=> 89 DA
+		mov edx, ecx ;=> 89 CA
+
+----XOR----
+	XOR ... => 31 <reg>
+
+----CMP----
+	cmp eax, ebx ; 39 <REG1 REG2*>
+		jne _not_equal ; 75 <addr>(02)
+		je _equal ; 74 <addr>(05)
+		jl _lower ; 7C <addr>(0A)
+		jg _greater ; 7F <addr>(0F)
+		
+	_not_equal: ; 02
+		...
+		
+	_equal: ; 05
+		...
+		
+	_lower: ; 0A
+		...
+		
+	_greater: ; 0F
+		...
+
+*l : (a | b | c | d)
