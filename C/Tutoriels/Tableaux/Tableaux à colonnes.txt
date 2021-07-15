@@ -1,0 +1,23 @@
+Les tableaux à colones sont des tableaux qui possèdent des lignes et des colonnes.
+- Creer un tableau à colonnes :
+<type tableau> <nom tableau>[<nombre colones>][<nombre lignes>] {  {<x ??*>} }
+
+Lexique (ne pas écrire l'étoile (*)) :
+<x ??> : Depend du nombre de colonnes et de lignes. Le nombre de {} dépend du nombre de colonnes (ex 6 colones = {}x6) et nombre d'élement dans chaque colonne dépend du nombre de lignes.
+------------------------------------
+Ex : 
+int tab[3][3] = { {1, 2, 3}, {4, 5, 6}, {7, 8, 9} };
+//             ^ On cree un tableau 3x3
+
+
+Tableau (ici tab) :
+[ ^ Colones][x][]
+|-----|
+|1|2|3|
+|4|5|6|
+|7|8|9|
+|------|   [ -> Lignes][][x]
+------------------------------------
+- Pour spécifier un élément d'un tableau à colonnes :
+<tableau>[<colonne>][<ligne>]
+

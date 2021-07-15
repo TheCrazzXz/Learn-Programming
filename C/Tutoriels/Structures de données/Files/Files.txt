@@ -1,0 +1,34 @@
+Dans le dossier "Fichiers files" se trouvent : Le fichier d'entête (.h) et le fichier des fonctions : (.c) des piles. 
+
+1. Mettre le fichier "queue.c" et "queue.h" dans le même dossier que le programme
+2. Au début du programme inclure "queue.h" et "<stdlib.h>" :
+#include "stack.h" //(en plus de <stdio.h>)
+#include <stdlib.h>
+
+[Fonctions utilisables avec les files] :
+
+	{Affichage} :
+		- Afficher tous les éléments de la file :
+			print_queue();
+
+	{Ajout} :
+		- Ajouter un élément à la file :
+			push_queue(<nouvel element>);
+
+	{Suppression} :
+		- Supprimer l'élément le premier élément de la file :
+			pop_queue();
+
+		- Supprimer la file (tous les éléments) :
+			clear_queue();
+	{Spécification} :
+		- Spécifier le premier élément de la file :
+			queue_first()
+
+		- Spécifier le dernier élément de la file :
+			queue_last()
+	
+		- Spécifier la longueur de la file :
+			queue_length()
+			
+	

@@ -1,0 +1,11 @@
+		--(++ sécurité)--
+- Pour éviter les problèmes de par exemple (inclusion infinie...) :
+(dans le fichier prototype (.h)) :
+#ifndef <nom fichier prototype (celui utilisé actuellement)>_H
+#define <nom fichier prototype (celui utilisé actuellement)>_H
+
+(code normal (prototypes...))
+
+#endif
+
+

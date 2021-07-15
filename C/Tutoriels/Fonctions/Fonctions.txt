@@ -1,0 +1,57 @@
+Les fonctions crees doivent être en dehors de la fonction "main".
+
+- Creer une fonction sans paramètres :
+void <nom fonction>(void) //void définit qu'il n'ya pas de paramètres
+{
+	(contenu)
+}
+
+Pour spécifier la fonction :
+<nom fonction>()
+---------------------------------------------------
+Exemple :
+void dire_bonjour(void)
+{
+     printf("Hi");
+}
+
+int main(void)
+{    
+     
+     
+     dire_bonjour();
+
+}
+--------------------------------
+- Creer une fonction :
+<type des paramètres de la fonction (int...)> <nom fonction>(<type paramètre (int...)> <Variable 1>, <type paramètre (int...)> <Variable 2>)
+{
+	(contenu fonction)
+}
+
+[La fonction va contenir le paramètre <Variable> qui est de type <type>. Cette <Variable> va pouvoir être utilisée dans la fonction. La fonction en elle même va contenir du contenu]
+
+[Si la fonction contient des paramètres, quand il faut la spécifier (<fonction>()), il faut mettre les paramètres entre les parenthèses. Et si elle n'en a pas, il faut ne pas mettre de paramètres mais laisser les parenthèses. 
+
+[Remarque : Toutes les variables définies dans une fonction sont détruites à la fin de la fonction.]
+----------------------------------------------------------------
+Exemple (long): 
+code :
+int init_ball(int pos)
+{
+     pos = 20;
+     return pos;
+}
+
+
+int main(void)
+{    
+     int position;
+
+     position = init_ball(position);
+     printf("Votre position est de %d en X\n", position);
+}
+----------------------------------------------------------------
+[Remarque : dans un script la fonction "main" est obligatoire.]
+
+-------------------

@@ -1,0 +1,30 @@
+Dans le dossier "Fichiers Graphes" se trouvent : Le fichier d'entête (.h) et le fichier des fonctions : (.c) des listes. 
+
+1. Mettre le fichier "graph.c" et "graph.h" dans le même dossier que le programme
+2. Au début du programme inclure "graph.h" et "<stdlib.h>" :
+#include "graph.h" //(en plus de <stdio.h>)
+#include <stdlib.h>
+
+[Fonctions utilisables avec les Graphes] :
+
+	{{Creer le graphe}} :
+		- Creer l'arbre (obligatoire) :
+			Graph <graphe> = new_graph(<nombre de noeuds>, <orienté (true ou false)>);
+	{Ajout} :
+		- Ajouter des noeux au graphe :
+			add_edge(<graphe>, <Nombre>, <Nombre auquel il est relié>)
+			<autant de add_edge que de noeuds crées (dans new_graph "<nombre de noueux>")...>
+
+	{Affichage} :
+		- Afficher le graphe :
+			print_graphe(<graphe>);
+
+	{Suppression} :
+		- Supprimer le graphe en lui même :
+			erase_graph(<graph>);
+
+	{Spécification} :
+		- Compter le nombre de noeux de l'arbre :
+			count_tree_node(<arbre>);
+			
+	

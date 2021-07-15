@@ -1,0 +1,13 @@
+- Faire une condition multiple : 
+if(<Condtion1> <opérateur de comparaison multiple> <Condition2>)
+{
+	(commandes)
+}
+
+------------------------------------------------------
+Ex : 
+if(Pseudo == Pierre && Password == 123)
+{
+	(commandes)
+}
+------------------------------------------------------

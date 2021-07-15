@@ -1,0 +1,14 @@
+Un commentaire est un texte qui ne sera pas pris en compte par le script 
+ - Creer un commentaire sur une seule ligne :
+//<texte>
+
+ - Creer un commentaire sur une plusieurs lignes :
+/*
+	<texte>
+	<texte>
+*/
+ - Ou alors :
+/*
+* <texte>
+*<texte>
+*/

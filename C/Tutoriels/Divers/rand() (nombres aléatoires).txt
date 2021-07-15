@@ -1,0 +1,8 @@
+Spécifier et Générer un nombre aléatoire total :
+rand()
+
+---------------------------
+exemple :
+int nombre = rand()
+---------------------------
+

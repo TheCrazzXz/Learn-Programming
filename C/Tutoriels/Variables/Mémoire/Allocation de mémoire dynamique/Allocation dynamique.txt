@@ -1,0 +1,54 @@
+Dans la mémoire, il y'a plusieurs segments dont la pile (stack) où sont stoquées toutes les variables qu'on crée normalement, exemple quand on fait `int i = 58;`, le code (.text) où il y'a les instructions binaires à exécuter et au le tas (heap), qui est un autre segment où on peut stoquer des donées, l'interrêt en C avec ce segment, c'est qu'on peut faire de l'allocation dynamique avec :
+	- L'allocation de mémoire dynamique sert à allouer au système un emplacement pour variable multiple/dynamique
+	- L'allocation dynamique est surtout utilisée dans les tableaux
+
+Exemple : L'allocation dynamique sert à pour un tableau, demander et allouer dynamiquement la taille
+
+[Allocation tas (heap) (allocation dynamique)]
+	{Prérequis} :
+		|Il faut inclure (en début de programme) la biblothèque <stdlib.h> :
+			#include <stdlib.h>
+			
+	{Allocation dans le tas (heap)} :
+		- Allouer des données dans le tas (heap) :
+			<type*>* <pointeur*> = (<type>*) malloc(<taille de l'allocation*>) 
+			
+			/*
+				<taille de l'allocation> : 
+					(voir : ../Taille des données.txt)
+					Taille en octects des données à allouer
+					Utilisation = <longueur> * sizeof(<type>)
+				
+					Exemple, si on veut allouer pour une taille de 5 entiers
+					5 * sizeof(int)
+					
+				<pointeur> : En fait, malloc() retourne une adresse donc le pointeur va pointer sur l'adresse qu'aura retourné malloc() donc celle qui a été allouée pour nos données dans le tas (heap)
+				
+				<type> : Type des données à allouer
+			*/
+
+		-+ Alouer dynamiquement des données qui seront mises à 0 par défaut (au lieu de mettre des valeurs aléatoires) :
+			<type> <pointeur> = (<type>*) calloc(<longueur (pas la taille) de l'allocation>, sizeof(<type>)));
+
+		- Une fois qu'on a plus besoin de cette allocation (par exemple : A la fin du programme) il est nécéssaire de la libérer : 
+			free(<pointeur>);
+
+----------------------------------------
+Exemple :
+	int* tableau = NULL;
+
+	tableau = malloc(sizeof(int)) * 9); //Réserver 9 emplacements mémoire de type int pour le tableau 
+	int valeurDescendante = 9;
+	for(int i = 0 ; i < 9 ; i++)
+	{
+		tableau[i] = valeurDescendante;
+		valeurDescendante -= 1; 
+	}
+	//`tableau`[taille: 9] = {9, 8, 7, 6, 5, 4, 3, 2, 1}
+	realloc(tableau, 10); //Changer la taille du tableau à 10
+	tableau[9] = 50 //element 10
+	//`tableau`[taille: 10] = {9, 8, 7, 6, 5, 4, 3, 2, 1, 50}
+
+----------------------------------------
+		-+ Ré-allouer l'emplacement en changeant la taille de l'allocation :
+			realloc(<pointeur>, <nouvelle taille de l'allocation>))

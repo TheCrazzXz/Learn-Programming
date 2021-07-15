@@ -1,0 +1,66 @@
+- Ouvrir un fichier dans le programme :
+FILE *<variable fichier> = fopen("<fichier.extension>", "<mode d'ouverture>"); //Il faut mettre le (*)
+
+--Important-- Un fois qu'on a plus besion du fichier il faut le fermer :
+fclose(<variable fichier>)
+
+[Mode d'ouverture : [Voir "Modes d'ouverture fichiers.txt"]]
+
+Gestion des fichiers (mettre en plein écran): 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+- [En mode lecture] :
+	{Obtention de contenu} :
+		- Obtenir le premier caractère ou le suivant si effectué plusieurs fois :
+			fgetc(<variable fichier>)
+
+		- Obtenir la première ligne ou la suivante si effectué plusieus fois :
+			signed char <variable texte>[<Taille>]
+			fgets(<variable texte>, <Taille maximale>, <variable fichier>)
+
+			//[La fin du fichier retourne NULL]
+		- Obtenir la première ligne ou la suivante si effectué plusieus fois formaté (avec flags):
+			fscanf(<variable fichier>, "<flag 1>, <flag 2> ...", &<variable 1>, &<variable 2> ...)
+
+			//[[Comme pour scanf Va prendre des flags (%s, %d...) qui vont êtres par ordre stockées dans des variables (<variable 1>...)]]
+
+	{Verifications} :
+		-+ Tester si la lecture du fichier est arrivé à sa fin (avec fgetc):
+			if(feof(<fichier>))
+			{
+				(...)
+			}
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+- [En mode écriture, si le fichier n'existe pas, il le cree] : 
+	{Ecrire dans un fichier} :
+		- Ecrire un caractère dans un fichier :
+			fputc("<caractère>", <variable fichier>);
+		- Ecrire une chaîne de caractères dans un fichier :
+			fputs(<texte ou variable>, <variable fichier>)
+		- Ecrire dans un fichier en mode formaté :
+			fprintf(<variable fichier>, "<flag 1>, <flag 2> ...", &<variable 1>, &<variable 2> ...)
+
+			//[[Comme pour scanf va prendre des flags (%s, %d...) qui vont êtres par ordre 			   			  stockées dans des variables (<variable 1>...)]]
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+- [Positionnement curseur] : 
+	{Gérer le positionnemnt du curseur} :
+		- Retourner/Spécifier la position curseur dans fichier
+			ftell(<fichier>) : 
+		- Déplacer le curseur : 
+			fseek(<fichier>, <déplacement>, <origine emplacement>)
+			//[ -> <Origine emplacement> : Endoit où faire le déplacement ]	: SEEK_SET : Début du fichier
+                                 							  SEEK_CUR : Position courante/actuelle
+                                 							  SEEK_END : Fin du fichier
+		- Réinitialiser la position du curseur :
+			rewind(<fichier>)
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+- [Divers] : 
+	{Necessite que le fichier soit fermé} :
+		- Renommer un fichier (fermé) :
+			rename(<ancien nom>, <nouveau nom>)
+		- Supprimer un fichier (fermé) :
+			remove(<fichier>)
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+		
+			
+
+		

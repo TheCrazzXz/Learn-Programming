@@ -1,0 +1,13 @@
+Astuce : Inverser deux variables :
+
+
+int main(void)
+{
+	<variable 1> = <contenu>
+	<variable 2> = <contenu>
+
+	<type (int...)> <variable temporaire> = 0 //ou "" si c'est une chaine de caractères
+	<variable temporaire> = <variable 1>
+	<variable 1> = <variable2>
+	<variable 2> = <variable temporaire>
+}

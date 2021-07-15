@@ -1,0 +1,32 @@
+[FONCTIONS - BUFFERS]
+	{scanf() (lire au clavier (appeller stdin))}
+		/*
+			Pour lire ce que l'utilisateur tape dans le clavier et le mettre dans une variable, on peut utiliser la fonction "scanf()"
+		*/
+		- Appeller l'entrée du clavier avec la console (stdin) et mettre cette entrée dans une variable : 
+			scanf(<format>, &<variable destination>) //Sauf pour les chaînes de caractères
+
+		- Si c'est une chaîne de caractères [%s] :
+			scanf(%s, <variable destination>) //On ne met pas le '&' car un tableau (donc ici chaîne de caractères) est déjà un pointeur
+
+			Lexique (ne pas écrire l'étoile (*)) :
+			[format (ensemble de flags) : (voir "/Les bases/Flags-de-format/")]
+
+			[Il faut utiliser une variable existante.]
+
+			
+
+	{sprintf() format2buffer} :
+		/*
+			sprintf() va faire la même chose que printf, sauf qu'au lieu d'envoyer la sortie vers stdout (affichage console), elle va l'envoyer dans un buffer (tableau) de valeurs (chaîne...)
+		*/
+
+			- Utilisation de sprintf() :
+				sprintf(&<variable destination>, <format* (chaîne de caractères)>)
+				//sprintf(<sortie>, ...) : Si c'est une chaîne de caractères
+
+				Lexique (ne pas écrire l'étoile (*)) :
+				[format (ensemble de flags) : (voir "/Les bases/Flags-de-format/")]
+		
+
+

@@ -1,0 +1,46 @@
+C'est quelque chose d'important à savoir ça aussi
+Chaque type de variable n'alloue pas la même taille en octets (bytes) qu'un autre type
+[Un byte vaut 8 bits (0 ou 1)]
+
+Exemples de tailles :
+	- Les entiers (int) :
+		Quand on alloue un entier (int), on allue 4 bytes (soit 4*8 (= 32) bits) à la mémoire
+	
+	- Les entiers courts (short) : 
+		Quand on alloue un entier court (short), on alloue 2 bytes (soit 2*8 (= 16) bits) à la mémoire
+
+	- Les entiers longs (long) :
+		Quand on alloue un entier long (long), on alloue :
+			- Dans un programme 32 bits, 4 bytes (soit 4*8 (= 32) bits) à la mémoire
+			- Dans un programme 64 bits, 8 bytes (soit 8*8 (= 64) bits) à la mémoire
+
+	- Les doubles (double) :
+		Quand on alloue un double, on alloue 8 bytes (soit 8*8 (= 64) bits) à la mémoire
+
+[TAILLES EN C]
+	{sizeof()} :
+		- Spécifier la taille en octects d'un type en C
+			sizeof(<type>) //exemple : sizeof(int), sizeof(long), sizeof(short)...
+
+		- Spécifier la taille en octets d'un tableau en C :
+			sizeof(<tableau>) //retourne : <longueur: tableau> * sizeof(type: tableau)
+			/*
+				Donc si le tableau est : int <tableau>[10];
+				Sachant qu'un int a une taille de 4 bytes, alors, forcément, la taille en octets (bytes) du tableau sera de 10 * 4 bytes (= 40 bytes)
+			*/
+
+		- Spécifier la taille en octets d'une structure en C :
+			sizeof(struct <structure>)
+
+			/*
+				Exemple : 
+					struct <la structure>
+					{
+						int var1; //int : 4 bytes
+						short var2; //short : 2 bytes
+						char var3; //char : 1 byte
+					};
+
+				Donc dans ce cas sizeof(<la structure>) retournera :
+					  sizeof(int) + sizeof(short) + sizeof(char) = 4 + 2 + 1 = 7
+			*/

@@ -1,0 +1,7 @@
+Modes d'ouverture des fichiers :
+		    r (lecture seule, doit exister)
+                    w (ecriture seule)
+                    a (ajout en fin de fichier)
+                    r+ (lecture/ecriture, doit exister)
+                    w+ (lecture/ecriture, supprimer le contenu)
+                    a+ (Ajout lecture/ecriture, fin de fichier)

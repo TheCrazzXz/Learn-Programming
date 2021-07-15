@@ -1,0 +1,60 @@
+Les fonctions de gestion de mémoire vont servir à gérrer élément par élément un tableau ou deux
+
+[GESTION MEMOIRE (mem)]
+	{Prérequis} :
+		- Inclure <string.h> :
+			#include <string.h> //Oui c'est bien <string.h> qui contient ces fonctions
+			
+	{Comparaison} :
+		- Comparer (l'égalité) un certain nombre d'élements <nombre-emplacements-memoire-a-comparer> de deux tableaux :
+			memcmp(<tableau-1>, <tableau-2>, sizeof(<<type:tableau-1&tableau-2>>) * <nombre-emplacements-memoire-a-comparer>);
+			
+			//retourne 0 si le résultat est positif ou autre donc :
+			/*
+				if(memcmp(<tableau 1>, <tableau 2>, sizeof(<type: tableau>) * <nombre-emplacements-memoire-a-comparer>) == 0) //
+				{
+					(...)
+				}
+				else
+				{
+					(...)
+				}
+			*/
+			
+		-------------------------------------
+		Exemple : 
+		int arr1[] = {2, 1};
+		int arr2[] = {2, 2};
+		if(memcmp(arr1, arr2, 2 * sizeof(int)) == 0) //2 est la taille du tableau car on veut comparer tous les éléments
+		{
+			printf("Ils sont égaux");
+		}
+		else
+		{
+			printf("Ils sont différents");
+		}
+		//Si on n'avait comparé qu'un seul élément mémoire donc :
+		//	`arr1`[0] -> 2
+		//  `arr2`[0] -> 2
+		// Alors le résultat serait positif
+		-------------------------------------	
+	{Copie d'emplacements mémoires} :
+		- Copier les éléments mémoire de j'usqu'à <nombre-emplacements-memoire-a-copier> à <dst> :
+			memcpy(<dst>, <src>, <nombre-emplacements-memoire-a-copier> * sizeof(<type:dst&src>));
+			
+			//note : Si <src> est un seul emplacement mémoire (example : un int), alors il faudra le convertir en void* : (void*)&<variable à pointer> et donc, bien-sûr, si ce n'est qu'un seul emplacement mémoire qu'on doit copier, alors <nombre-emplacements-memoire-a-copier> devrait être : 1 * sizeof(int)
+			
+			--------------------------------------------
+			Example :
+				int arr1[] = {11, 9, 4}; //Tableau de 3 emplacements mémoire
+				void* test = memchr(arr1, 9, sizeof(int) * 3); //Trouver l'adresse de l'emplacement mémoire contenant `9` dans le tableau `arr1`
+				memcpy(test, (void*)&arr1[2], 1 * sizeof(int)); //Copier la valeur du pointeur vers l'adresse du byte contenant `9` de `arr1` vers l'adresse de l'élément de l'indice `[2]` du tableau `arr1`
+				printf("%d", arr1[1]); //Afficher le résultat
+			--------------------------------------------
+			
+			
+	{Recherche} :
+		- Chercher un élément (en byte) dans un tableau j'usqu'à  <nombre-emplacements-memoire-ou-chercher>:
+			void* <pointeur*> = memchr(<tableau>, <byte>, sizeof(int) * <nombre-emplacements-memoire-ou-chercher>);
+			
+			//<pointeur*> : Pointeur vers l'adresse de l'emplacement mémoire trouvé du byte dans le tableau

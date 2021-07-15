@@ -1,0 +1,3 @@
+Les piles sont des structures de données. -> Structure qui contient plusieurs données. 
+Une pile, quand on ajoute un élément se met par dessus les autres [Voir Images/Shèma - pile.PNG].
+Et quand on retire un élément (dépiler), c'est élément le plus en haut qui est retiré [Voir Images/Structure - pile.PNG].

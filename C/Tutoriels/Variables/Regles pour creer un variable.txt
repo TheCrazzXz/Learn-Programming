@@ -1,0 +1,8 @@
+Lorsequ'on veut creer une variable il faut respecter certaines règles :
+ - Il ne faut pas que son nom commence par un nombre.
+
+- Elle ne doit pas comporter de caractères spéciaux (comme é, %, ù...).
+
+- Elle ne doit pas avoir d'espaces.
+
+- Mais elle peut avoir et commencer par des tirets du bas "_".

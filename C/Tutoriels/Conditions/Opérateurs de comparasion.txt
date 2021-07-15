@@ -1,0 +1,7 @@
+Liste des opérateurs de comparaison : 
+== : Egal à
+!=  : Différent de
+<   : Plus petit de que
+>   : Plus grand que
+<= : Plus petit ou égal à
+>= : Plus grand ou égal à

@@ -1,0 +1,5 @@
+Types de variables :
+	int	 	 : Nombre
+	string[]	 : Chaînes de carcatères -> "<contenu>"
+	float | Double   : Nombre décimal
+	bool 		 : Booléen (true ou false)

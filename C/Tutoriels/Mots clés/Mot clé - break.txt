@@ -1,0 +1,24 @@
+break est un mot clé qui peut être utilisé dans des boucles(for et while), dans des conditions... pour sortir de la boucle ou condition
+
+Utilisation : 
+break
+
+Exemple :
+int compteur;
+
+for(compteur = 0 ; compteur < 6 ; compteur += 1)
+{
+	int age = 0 ;
+	printf("Quel est votre âge ?\n");
+	scanf(%d, &age);
+	if age > 30
+	{
+		printf("Age trop grand")
+	}
+	else 
+	{
+		break
+		//on sort de la boucle
+//En dehors de la boucle
+printf("Age assez petit")
+}

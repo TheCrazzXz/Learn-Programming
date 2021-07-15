@@ -1,0 +1,38 @@
+Dans le dossier "Fichiers Arbres binaires" se trouvent : Le fichier d'entête (.h) et le fichier des fonctions : (.c) des listes. 
+
+1. Mettre le fichier "tree.c" et "tree.h" dans le même dossier que le programme
+2. Au début du programme inclure "tree.h" et "<stdlib.h>" :
+#include "tree.h" //(en plus de <stdio.h>)
+#include <stdlib.h>
+
+[Fonctions utilisables avec les Arbres binaires] :
+
+	{{Creer l'arbre}} :
+		- Creer l'arbre (obligatoire) :
+			Tree *<arbre> = join_tree(<+>);
+
+		/*[ + : On peut ajouter des sous arbres (avec join_tree) à l'abre.
+
+		Utilisation de join_tree (sous arbre): join_tree(<mode1 ou mode2>, <mode1 ou mode2>, <noeuds>)
+				      Modes : <mode 1> : join_tree(<modes...>, <modes...> <noeuds>)
+					   <mode 2> : new_tree
+
+		Utilisation de new_tree (valueur seule (fin de l'arbre) : new_tree(<valeur>)
+		]*/
+
+	{Affichage} :
+		- Afficher la structure de l'arbre en commençant par la gauche :
+			print_tree_prefix(<arbre>);
+
+		//Afficher la structure de l'arbre en commençant par la droite :
+			print_tree_postfix(<arbre>)
+
+	{Suppression} :
+		- Supprimer tous les éléments de l'arbre :
+			clean_tree(<arbre>)
+
+	{Spécification} :
+		- Compter le nombre de noeux de l'arbre :
+			count_tree_node(<arbre>)
+			
+	

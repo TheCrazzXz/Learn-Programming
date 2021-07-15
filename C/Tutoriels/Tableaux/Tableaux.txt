@@ -1,0 +1,45 @@
+Un tableau est une liste qui contient plusieurs éléments.
+
+- Creer un tableau :
+<type tableau(int...)> <nom tableau>[<nombre d'éléments>]; //on cree un tableau
+
+- Creer un tableau avec des éléments déjà dedans :
+<type tableau(int...)> <nom tableau>[<nombre d'éléments>] {<élément 1>, <élément 2>, <élément 3>...};
+
++ Mettre tout à zero :
+<type tableau(int...)> <nom tableau>[<nombre d'éléments>] {0};
+
+
+- Mettre des élements dans un tableau :
+<nom tableau>[ID élément*] = <contenu> //on va mettre <contenu> dans l'ID du tableau
+	
+Lexique (ne pas écrire l'étoile (*)) :
+[ID élément : numéro de l'élement, par exemple, si un tableau contient 5 éléments (<nombre éléments>) l'ID du premier élément va être de [0], le deuxième [1] et le dernier [4], si on met <nom tableau>[3] = <contenu>, le contenu va être mis sur l'ID 3 (2ème élement) du tableau]
+
+- Spécifier (acceder) à un élément du tableau :
+<nom tableau>[ID élément] 
+
+Ou alors :
+*(<nom tableau> + <ID élément>)
+
++ Spécifier le premier élément du tableau :
+*<nom tableau>
+
++- On peut spécifier une variable au lieu de l'élément du tableau :
+<tableau>[<variable>]
+
+++ Parcourir tous les éléments d'un tableau et les afficher :
+<variable compteur>;
+for(<variable compteur> = 0 ; <variable compteur> < <nombre éléments tableau> ; <variable compteur>++)
+          printf("[%<type tableau (int...)>]", <tableau>[<variable compteur>]);
+
+-- A Savoir : --
+Le tableau est déjà un pointeur autrement dit, si on le spécifie en paramètre d'une fonction, il faut mettre une étoile "*" au début
+<type> <fonction>(<type> *<tableau>)
+
+Ou alors :
+<type> <fonction>(<type> <tableau>[])
+
+
+
+

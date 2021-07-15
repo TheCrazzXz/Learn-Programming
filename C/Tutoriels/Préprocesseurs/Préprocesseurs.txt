@@ -1,0 +1,20 @@
+[PREPROCESSEURS]
+	-------------------------------------------
+	Les préprocesseurs sont des programmes
+	qui s'indentifient avec un "#" au début
+	comme (#include, #define...) qui se lancent
+	dans la compilation du programme
+
+	Par exemple, #define va définir une constante
+	et lors de la compilation du fichier tous les
+	endroit où cette constante va être apellée, ça
+	va la remplacer par la valeur spécifiée
+
+	exemple : on peut mettre une fonction (ex : printf)
+	dans un préprocesseur (ex : "afficher") pour qu'à chaque 
+	fois que ce mot clé ("afficher") soit appelé, lors de la
+	compilation ça va le remplacer par la fonction (printf)
+	-------------------------------------------
+	{Creation}
+		- Definir une constante en préprocésseur :
+			#define <VARIABLE> <contenu>

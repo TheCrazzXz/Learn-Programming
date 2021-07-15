@@ -1,0 +1,37 @@
+La boucle for est une boucle qui va permettre surtout de modifier des valeurs rapidement. Cette boucle est surtout utilisée pour faire des parcours.
+
+- Creer une boucle for : 
+<type variable> <variable boucle>;
+for(<étape 1> ; <étape 2> ; <étape 3>)
+{
+	(commades à faire)
+}
+
+[Etape 1 : Initialisation = Modifier/initialiser la variable à utiliser pour commencer pour [APRES] effectuer les "tant que cette variable = <valeur>" - 
+Utilisation : 
+<variable boucle> = 0]
+
+[Etape 2 : Condition (tant que) = Condition à verifier pour que la boucle ne s'arette pas -
+Utilisation (sans le "if"):
+<variable boucle> <opérateur de comparaison> <valeur>]
+
+[Etape 3 : Auguementation de la valeur pour arriver à la condition = Incrémenter cette variable pour arriver à la condition -
+Utilisation :
+<variable boucle> += <nombre à ajouter>]
+-----------------------------------------------------
+Exemple : 
+code :
+int compteur;
+
+for(compteur = 0 ; compteur < 6 ; compteur++)
+{
+	printf("Je suis un message qui va s'afficher 5 fois\n")
+}
+
+Resultat : 
+Je suis un message qui va s'afficher 5 fois
+Je suis un message qui va s'afficher 5 fois
+Je suis un message qui va s'afficher 5 fois
+Je suis un message qui va s'afficher 5 fois
+Je suis un message qui va s'afficher 5 fois
+-----------------------------------------------------

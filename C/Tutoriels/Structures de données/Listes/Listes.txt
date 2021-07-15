@@ -1,0 +1,39 @@
+Dans le dossier "Fichiers listes" se trouvent : Le fichier d'entête (.h) et le fichier des fonctions : (.c) des listes. 
+
+1. Mettre le fichier "list.c" et "list.h" dans le même dossier que le programme
+2. Au début du programme inclure "list.h" et "<stdlib.h>" :
+#include "list.h" //(en plus de <stdio.h>)
+#include <stdlib.h>
+
+[Fonctions utilisables avec les listes] :
+
+	{{Creer la liste}} :
+		- Creer la liste (obligatoire) :
+			<liste> = new_list();
+
+	{Affichage} :
+		- Afficher tous les éléments de la liste :
+			print_list(<liste>);
+
+	{Ajout} :
+		- Ajouter un élément à l'avant de la liste :
+			<liste> = push_front_list(<nouvel element>);
+
+		- Ajouter un élément à l'arrière de la liste :
+			<liste> = push_back_list(<nouvel element>);
+
+	{Suppression} :
+		- Supprimer l'élément à l'avant de la liste :
+			<liste> = pop_front_list(<liste>);
+
+		- Supprimer l'élément à l'arrière de la liste :
+			<liste> = pop_back_list(<liste>);
+
+		- Supprimer tous les éléments de la liste :
+			<liste> = clear_list(<liste>)
+
+	{Spécification} :
+		- Spécifier la longueur de la liste :
+			list_length(<liste>)
+			
+	

@@ -1,0 +1,22 @@
+- Faire des opérations avec une variable :
+<type> <nom variable> = <nombre ou variable> <opérateur> <nombre ou variable>
+[On peut mettre plus d'opérations donc plus de nombres ou variables.]
+
+- Quand on modifie une variable déjà existante, on peut faire ça :
+<variable> = <variable> <opération>
+
++- Ou alors :
+<variable> <opérateur>= <opération>
+
++- Raccourci pour faire une opération sur la même variable :
+<variable> <opérateur>= <nombre ou variable>
+
++- Raccourci pour auguementer (incrémenter) ou réduire (décrémenter) de 1 :
+	{Incrémenter : }
+		<variable>++ //Ou alors ++<variable>
+	{Décrementer : }
+		<variable>-- //Ou alors --<variable>
+
+[Note : <double opérateur><variable> = Pré-incrémentation : Fait le calcul et met à jour la variable
+              <variable><double opérateur> = Post-incrémentation : Environ l'inverse]
+

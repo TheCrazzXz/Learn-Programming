@@ -1,0 +1,35 @@
+While est une focntion qui fait une boucle tant qu'une variable est égale à quelque chose
+[BOUCLE WHILE]
+	{Boucle infinies} :
+		- Creer une boucle infinie :
+	
+			<type [Recommandé : int]> <variable boucle> = 0
+			while(<variable boucle> <opérateur comparaison> <nombre ou variable>)
+				{
+					(commandes)
+				}
+
+
+	{Boucles limitées} :
+		+ Creer une boucle limitée :
+			<type [Recommandé : int]> <variable boucle> = 0
+			while(<variable boucle> <opérateur comparaison> <nombre ou variable>)
+				{
+					(commandes)
+					<variable boucle> += <nombre à ajouter>
+				}
+
+					[L'action va se répéter jusqu'à que l'addition de la variable boucle en fin de fonction va 					arriver à la valeur "tant que" de while]
+
+- do : Ca voir si la <variable boucle> = <ce qu'elle doit être>, si ça réussit, on rentre dans le while sinnon non. ça ne va pas renter directement dans la boucle.
+Code :
+do
+     {	
+	// Verifie une fois si la <variable boucle> = <ce qu'elle doit être>
+          (commande)
+	// Si la commande du while est vraie il va rentrer dans la boucle while sinnon non mais il va faire le "do" 
+	
+     } 
+     while(<...>); // il faut mettre le ";"
+	//Boucle si le "do" a marché
+	(commandes)

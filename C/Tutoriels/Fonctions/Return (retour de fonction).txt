@@ -1,0 +1,23 @@
+la fonction return sert à retourner une valeur dans une méthode ET met fin à la méthode.
+
+Utilisation :
+(dans la méthode)
+return <variable, nombre...>
+
+----------------------------------
+Exemple :
+int Hello_World(void)
+{
+	signed char text = "Hello world";
+	return text;
+	//Fin de la méthode
+}
+(dans main) :
+{
+	printf(Hello_World())
+	//Affiche ce que retourne la méthode : "Hello world"
+}
+
+
+Resultat :
+Hello world 

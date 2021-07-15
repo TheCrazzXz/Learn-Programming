@@ -1,0 +1,4 @@
+Quand on cree une variable, elle est stoquée sur la mémoire vive de l'ordinateur, elle a une taille (relative au contenu et au type [Voir ../Images/Type_variables.PNG) et elle a aussi une adresse en héxadécimal (ex : 0xFFF14C9).
+
+Cette adresse peut être récupérée/spécifiée en utilisant :
+printf("%p", &<variable>)

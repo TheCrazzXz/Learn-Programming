@@ -1,0 +1,52 @@
+Les pointeurs de fonctions sont des pointeurs qui contiennent l'adresse d'une fonction, donc on peut exécuter la fonction pointée à partir du pointeur
+[POINTEURS DE FONCTION]
+	{Pointeurs de fonction} :
+		- Créer un pointeur de fonction :
+			<type de retour fonction*> (*<nom pointeur fonction>)(<arguments fonction...*>)
+			<nom pointeur fonction> = <fonction à pointer>
+
+			/*
+				<type de retour fonction> : Type de retour de la fonction à pointer
+				<arguments fonction...> : Arguments (paramètres) que prend la fonction à pointer			
+			*/
+		- Appeler la fonction pointée :
+			<nom pointeur fonction>(<paramètres>)
+
+		- Créer un tableau de pointeurs de fonctions :
+			<type de retour fonction> (*<nom tableau pointeurs>[<taille>])(<arguments fonction>);
+			//Appeler une fonction pointée d'un indice X dans le tableau : <nom tableau pointeurs>[<indice>](<arguments fonction...>)
+
+		+- Il est possible d'utiliser les adresses comme on veut, vu qu'une fonction n'est rien d'autre qu'une adresse :
+			<type retour fonction> <fonction 1>(<arguments...>)
+			{
+
+			}
+			<type retour fonction> <fonction 2>(<arguments....>)
+			{
+
+			}
+			(dans main()) :
+				<type de retour fonction*> (*<nom pointeur fonction>)(<arguments fonction...*>)
+				<nom pointeur fonction> = <fonction 2> - <fonction 1>
+				//va contenir <fonction 2>()
+		-------------------------------------------------------
+		Exemple 1:
+			void func(int number);
+
+			(dans main()) :
+				void (*func_ptr)(int); //On crée un pointeur qui pointe vers une fonction qui ne retoune rien et qui prend un int
+
+				func_ptr = func; //On fait pointer le pointeur vers la fonction func(int)
+
+				func_ptr(8); //On exécute la fonction pointée avec l'argument 8
+
+		Exemple 2 :
+			int func(int n, char c);
+
+			(dans main()) :
+				int (*func_ptr)(int, char);
+
+				func_ptr = func;
+
+				int result = func_ptr(8, 'a');
+		-------------------------------------------------------

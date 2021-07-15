@@ -1,0 +1,39 @@
+Dans le dossier "Fichiers Dlistes" se trouvent : Le fichier d'entête (.h) et le fichier des fonctions : (.c) des dlistes. 
+
+1. Mettre le fichier "dlist.c" et "dlist.h" dans le même dossier que le programme
+2. Au début du programme inclure "dlist.h" et "<stdlib.h>" :
+#include "dlist.h" //(en plus de <stdio.h>)
+#include <stdlib.h>
+
+[Fonctions utilisables avec les DListes] :
+
+	{{Creer la dliste}} :
+		- Creer la dliste (obligatoire) :
+			<dliste> = new_dlist();
+
+	{Affichage} :
+		- Afficher tous les éléments de la dliste :
+			print_dlist(<dliste>);
+
+	{Ajout} :
+		- Ajouter un élément à l'avant de la dliste :
+			<dliste> = push_front_dlist(<nouvel element>);
+
+		- Ajouter un élément à l'arrière de la dliste :
+			<dliste> = push_back_dlist(<nouvel element>);
+
+	{Suppression} :
+		- Supprimer l'élément à l'avant de la dliste :
+			<dliste> = pop_front_dlist(<dliste>);
+
+		- Supprimer l'élément à l'arrière de la dliste :
+			<dliste> = pop_back_dlist(<dliste>);
+
+		- Supprimer tous les éléments de la dliste :
+			<dliste> = clear_dlist(<dliste>)
+
+	{Spécification} :
+		- Spécifier la longueur de la dliste :
+			dlist_length(<dliste>)
+			
+	

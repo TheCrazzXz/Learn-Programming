@@ -1,0 +1,18 @@
+[Caractères spéciaux] :
+	Retour à la ligne :
+		\n
+	
+	Tabulation [Tab] :
+		\t
+	
+	Retour chariot :
+		\r
+	
+	Retour arrière :
+		\b
+
+	Nouvelle page (clear la console):
+		\f
+
+	Ignorer la fin d'une chaîne de caractères (avec : " et ') :
+		\<" ou '>

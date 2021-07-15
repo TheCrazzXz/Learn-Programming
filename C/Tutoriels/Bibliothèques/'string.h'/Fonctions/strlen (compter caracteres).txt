@@ -1,0 +1,3 @@
+			--strlen--
+- Spécifier le nombre de caractères :
+strlen(<variable chaîne de caractères>) 

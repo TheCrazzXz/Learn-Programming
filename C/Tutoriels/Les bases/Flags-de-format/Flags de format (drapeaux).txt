@@ -1,0 +1,9 @@
+Le format représente comment on veut que les variables soient sorties de la fonction
+
+Liste des flags (%d, %s...) en C :
+     %d  : Nombre entier (int)
+     %g  : Nombre flottant (décimal) (float)
+     %c  : Caractère seul (char)
+     %s  : Chaine de caractère (texte)
+     %p  : Adresse d'une varible (en héxadécimal)
+     %x  : Hexadécimal

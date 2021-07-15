@@ -1,0 +1,2 @@
+- Compiler le programme (CMD)
+gcc <programme à compiler (input)> -o <nom de l'execulatble (output)>

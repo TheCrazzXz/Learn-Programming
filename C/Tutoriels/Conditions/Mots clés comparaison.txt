@@ -1,0 +1,7 @@
+Mots clés de comparaison avec if : 
+[Apres le "if"]
+else : Sinnon
+else if : Sinnon si (Va d'abord essayer le "if" et ensuite celui là (Equivalent de "elif" en python)
+
+
+

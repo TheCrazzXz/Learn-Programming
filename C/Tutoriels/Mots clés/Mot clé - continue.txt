@@ -1,0 +1,4 @@
+Continue permet de relancer une boucle(while et for) 
+
+Utilisation :
+continue;

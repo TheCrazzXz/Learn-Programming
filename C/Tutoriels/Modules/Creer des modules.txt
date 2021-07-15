@@ -1,0 +1,38 @@
+Les modules sont des fichiers externes contenant des fonctions ou/ET des structures.
+
+- Creer un module :
+[Pour creer un module, nous allons avoir besoin de 3 fichiers.]
+- Le fichier principal (.c) (là où la fonction va être executée)
+- Le fichier où la fonction va être décrite (.c)
+- Et là où va se trouver le prototype (la déclaration) de la fonction (.h)
+
+1. Fichier du prototype <nom fichier>.h
+
+<type fonction> <fonction>(<paramètres>);
+/*[Ou alors/et une structure (de la même manière que normale)]*/
+
+2. Fichier de description <nom fichier>.c :
+#include <stdio.h>
+#include "<fichier prototype>.h" // "" définit que c'est un fichier de modules.
+
+<type fonction> <fonction>(<paramètres>) // Il faut mettre la fonction du fichier prototype
+{
+	(definition fonction...)
+}
+
+3. Dans le fichier principal :
+#include "<fichier prototype>.h"
+
+(...)
+
+[On peut maintenant utiliser la fonction]
+
+[Pour creer plusieurs modules il faut simplement ajouter un autre prototype (fonction) au fichier prototype puis la définir dans le fichier où la fonction va être décrite.]
+
+[Attention : Lors de la compilation, il faut compiler tous les fichiers (.c) donc le fichier principal et le fichier de la définition de la fonction :
+
+gcc *.c -o <nom executable>
+
+Donc si il y'a un autre fichier (.c) dans le même dossier, il sera lui aussi compilé et donc, si il contient une erreure, il faut soit le déplacer soi le corriger...]
+
+

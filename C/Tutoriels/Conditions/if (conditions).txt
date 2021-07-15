@@ -1,0 +1,40 @@
+			--if : si--
+if permet d'effectuer des traitements conditionnels.
+[Dans les "if" ne pas mettre le ";"
+- Creer une condition :
+if (<variable> <Opérateur de comparaison*> <(résultat attendu*)>)
+	{
+		(commandes)
+	}
+Lexique (ne pas écrire l'étoile (*)) : 
+[Opérateur de comparaison : (==, !, <...)]
+[Ce qu'elle doit être : (variable, nombre, caractère...)]
+
+- Ajouter d'autres mots clés :
+if (<variable> <Opérateur de comparaison*> <(résultat attendu)>)
+	{
+		(commandes)
+	}
+<mot clé>
+	{
+		(commandes)
+	}
+
+--
+- Si la variable est un booléen (1 ou 2) On peut simplement mettre :
+if (<variable>)
+
++ On peut mettre des opérateurs :
+Exemple : 
+if (!<variable>)
+
+- Raccourci pour les conditions avec "if" (terner) :
+(<condition>) ? <commande si c'est vrai> : <commande si c'est faux>;
+Exemple :
+
+(Resulat == 1) ? printf("GG OUI") : printf("Non ! )':");
+
+Dans ce cas (de raccourci), si on veut éditer la même variable, il faut faire ça :
+<variable> = (<condition>) ? <changement si vrai> : <changement si faux>;
+Exemple :
+<Level> = (Niveau > 100) ? 100 : 101;

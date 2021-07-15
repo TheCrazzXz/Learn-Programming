@@ -1,0 +1,4 @@
+Liste opérateurs comparaison multiple :
+&& : ET 
+||    : Ou
+!     : Non/Not

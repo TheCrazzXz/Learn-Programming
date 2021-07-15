@@ -1,0 +1,2 @@
+- Creer un variable de type chaîne de caractères (pour un seul mot) : 
+signed char <nom variable>[<nombre de caractères max>] = "<contenu>" 

@@ -1,0 +1,24 @@
+Une fois la structure cree, on peut lui mettre un type (types déjà existants : int, char, float...) Pour éviter de mettre struct au début de chaque assignation.
+
+- Définir type :
+struct <structure>
+{
+	(...)
+};
+
+typedef struct <structure> <nom du type (nouveau)>
+
+int main(void)
+{
+	(...)
+}
+
+-+ Ou alors :
+typedef struct <structure>
+{
+	(...)
+} <nom du type (nouveau)>;
+
+- On peut maintenant creer la variable comme ça : 
+<nom du type> <nom variable> = {(...)};
+

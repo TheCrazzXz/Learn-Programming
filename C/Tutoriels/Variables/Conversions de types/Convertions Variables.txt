@@ -1,0 +1,10 @@
+Il peut s'averrer nesseçaire de changer le type d'un variable avec une conversion : 
+Type de variables :
+int = nombre entier
+float = nombre décimal
+char = Chaine de caractères
+
+- Convertir (caster) le type d'une variable :
+<type de la variable> <nom nouvelle variable> = (<nouveau type>)<variable existante>
+
+[ça va creer une nouvelle variable qui va contenir l'ancienne mais avec un nouveau type.]

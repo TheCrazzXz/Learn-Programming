@@ -1,0 +1,36 @@
+- Code pour afficher du texte :
+(dans la fonction) :
+
+	printf("<texte>");
+
+[Le #include <stdio.h> ne sera plus affiché dans les bases car il est présent dans le code minimal]
+
+
+-  Afficher une variable :
+printf("<flag*>", <variable>)
+
+Lexique (ne pas écrire l'étoile (*)
+[flag : Type de variable en drapeau (%) [Voir "../Flags-de-format"]
+     
+
+[<variable> est le nom de la variable à spécifier/afficher]
+[Lors de l'affichage le <flag> va être remplcé par la variable]
+
+-  Afficher plusieurs variables :
+printf("<flag1> ... <flag2>", <variable1>, variable2 ...)
+[Lors de l'affichage le <flag> va être remplcé par la variable]
+
+[On peut les combiner avec le texte :
+Exemple :
+printf("Je m'apelle %c et j'ai %d ans", nom, age)
+
++ Lorsque c'est un nombre flottant, on peut préciser les nombres qu'il affiche après la virgule : 
+%.<nombre>f
+
+- On peut aussi faire des opérations directement avec printf :
+printf("<flag>", <calcul>)
+
+
+
+
+

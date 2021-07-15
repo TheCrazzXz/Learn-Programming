@@ -1,0 +1,46 @@
+Quest-ce qu'un pointeur :
+	Une pointeur (dans une fonction) est une varible contenant l'adresse (sur le systeme) d'une autre variable.
+
+Celà peut servir pour :
+	Comme toutes les variables définies dans une fonctions sont détruite à la fin de cette fonction, on ne peut pas récuperer une variable d'une fonction dans une autre fonction ou main. Les pointeurs vont servir à résoudre ce problème : Ils vont pouvoir garder le contenu de la variable créee dans l'autre fonction
+
+Aussi un pointeur, plutot qu'une variable qui va copier va pointer et donc le programme sera beaucoup plus rapide, donc on ne peut presque pas s'en passer.
+[POINTEURS]
+	- Creer une pointeur pour une fonction :
+		<type> <fonction>(int *<nom pointeur>)
+		{
+			*<nom pointeur> = <contenu>; //contenu après pointeur (modification), il faut mettre l'étoile (*)
+     
+		}
+		(dans une autre fonction)
+		{	
+			<...>
+     			<type> <variable> = <contenu>; //contenu = contenu avant pointeur, le pointeur va prendre le contenu de la variable
+     			<type> *<nom pointeur dans main> = &<variable>;
+			<fonction>(<nom pointeur dans main>);
+			<...>
+		}
+		[On peut maintenant spécifier la <variable> après modification.]
+
+	- Creer un pointeur simple :
+		<type> <variable> = <valeur>;
+		<type> /*Même type que la variable à pointer*/ *<nom pointeur> = &<variable à pointer>;
+
+		/*
+			[LES SPECIFICATIONS]
+				[VARIABLES] 
+					<variable> : valeur/contenu de la variable
+					&<variable> : adresse de la variable
+			[POINTEURS]
+				<pointeur> : adresse de la variable pointée
+				*<pointeur> : valeur de la variable pointée
+				&<pointeur> : adresse du pointeur
+		*/ 
+
+	-+ Si il s'agit d'un type de structure ou classe il faut spéficier le pointeur comme ça :
+		(*<variable>).<attribut> = (...)
+
+		Ou alors :
+			<variable>-><attribut> = (...)
+
+	Exemple (dans ./exemples/exemple_pointeur.c et dans ./exemples/exemple_pointeur2.c)

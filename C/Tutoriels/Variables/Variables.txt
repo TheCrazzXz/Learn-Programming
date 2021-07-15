@@ -1,0 +1,27 @@
+- Creer une variable :
+<type*> <nom variable> = <contenu>;
+
+Lexique (ne pas écrire l'étoile (*)) :
+[Type : Type de variable :
+int = nombre entier
+float = nombre décimal
+char = Caractères seul (écrire comme ça : "<caractère>"]
+
+- Modifier une variable déjà existante :
+<nom variable> = <nouveau contenu>
+
++ Creer une variable constante (qui ne pourra jamais être changée) :
+const <type> <nom variable> = <...>
+
++ Mots clés importants :
+register <type> ... 
+[La variable sera stockée dans la mémoire cache du processeur de l"ordinateur, les calculs seront donc beaucoup pmus rapides.]
+
+
+
+
+
+
+
+
+

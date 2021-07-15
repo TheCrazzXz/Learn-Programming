@@ -1,0 +1,3 @@
+			--strcpy--
+- Copier des chaînes de caractères dans une autre : 
+strcpy(<variable chaîne de caractères>, <variable destination>)

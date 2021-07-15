@@ -1,0 +1,16 @@
+		--Code minimal : C--
+En language C, il y'a un code minimal qu'il faut mettre dans son script pour qu'il marche correctement : 
+
+#include <stdio.h>
+
+- Première fonction (obligatoire) :
+int main(void)
+{
+	<code>;
+	<code>;
+}
+
+[Il est nécessaire dans une fonction à la fin de chaque ligne de code de mettre un ";"]
+
+[La fonction "main" est une fonction obligatoire au début d'un script en language C, sans elle impossible de faire marcher le programme. C'est après qu'on va en creer plus]
+

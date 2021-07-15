@@ -1,0 +1,46 @@
+Les structures sont des classes qui rassemblent plusieurs variables qu'on peut définir pour chaque variable de cette structure.
+- Creer une structure :
+(avant le main)
+struct <nom de la structure>
+{
+	<type> <variable 1>;
+	<type> <variable 2>;
+	<type> <variable 3>;
+	...
+//toutes les variables de cette structure auront ces variables/attributs 
+}; // Ne pas oublier le ";" ici
+
+
+int main(void)
+(...)
+- Creer une variable de cette structure :
+(dans main)
+struct <nom de la structure> <nom variable> = {<variable/attribut1>,<variable/attribut2>,<variable/attribut3>} 
+
+[Dépend du nombre de variables/attributs définis Ex : 5 variables/attrubts = <attr 1>,<attr 2>,<attr 3>,<attr 4>,<attr 5>...]
+
+- Spécifier l'attribut de la variable :
+<variable de la structure>.<attribut>
+
+---------------------------------------------------------------
+Exemple (long) :
+
+struct Player
+{
+    signed char username[256];
+    int level;
+    int Money;
+    int HP;
+};
+
+
+
+int main(void)
+{
+    struct Player Player1 = {"Marcus", 15, 500, 100};
+    printf("Nom : %s[Niveau : %d]\n | Argent : %d$ - Vie : %d\n", Player1.username, Player1.level, Player1.Money, Player1.level);
+}
+---------------------------------------------------------------
+
+
+

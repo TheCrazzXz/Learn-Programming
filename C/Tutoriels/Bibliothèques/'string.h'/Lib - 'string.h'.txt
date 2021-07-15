@@ -1,0 +1,4 @@
+<string.h> est une bibliothèque qui va permettre d'ajouter des fonctions sur les chaînes de caractères.
+
+Ajouter <string.h> au programme :
+#include <string.h> 

@@ -1,0 +1,9 @@
+Les opérateurs sont les outils de calculs qu'on peut utiliser pour une variable ou autre :
+-------------------------------------------------------
+Liste des opérateurs :
+	+ (addition)
+	- (soustraction)
+	* (multiplication)
+	/ (division)
+	% (modulo) (reste d'une division)
+-------------------------------------------------------

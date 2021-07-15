@@ -1,0 +1,34 @@
+Dans le dossier "Fichiers piles" se trouvent : Le fichier d'entête (.h) et le fichier des fonctions : (.c) des piles. 
+
+1. Mettre le fichier "stack.c" et "stack.h" dans le même dossier que le programme
+2. Au début du programme inclure "stack.h" et "<stdlib.h>" :
+#include "stack.h" //(en plus de <stdio.h>)
+#include <stdlib.h>
+
+[Fonctions utilisables avec les piles] :
+	{{Creer la pile}} :
+		- Creer la pile (obligatoire) :
+			new_stack(<nom pile>);
+
+	{Affichage} :
+		- Afficher tous les éléments de la pile :
+			print_stack((<nom pile>));
+
+	{Ajout} :
+		- Ajouter un élément à la pile (qui sera en haut) :
+			<nom pile> = push_stack(<nom pile>, <nouvel element>);
+
+	{Suppression} :
+		- Supprimer l'élément le plus en haut de la pile :
+			<nom pile> = pop_stack(sta);
+
+		- Supprimer la pile (tous les éléments) :
+			<nom pile> = clear_stack(<nom pile>);
+	{Spécification} :
+		- Spécifier l'élément le plus haut de la pile :
+			top_stack(<nom pile>)
+
+		- Spécifier la longueur de la pile :
+			stack_length(<nom pile>)
+			
+	
